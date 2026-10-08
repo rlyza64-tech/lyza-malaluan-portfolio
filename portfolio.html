@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyza Rivera Malaluan — Senior QA Engineer Portfolio</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-blue: #2563eb;
+            --dark-gray: #1f2937;
+            --light-gray: #f3f4f6;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), #0f172a);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p.subtitle {
+            font-size: 1.25rem;
+            color: #93c5fd;
+            margin-bottom: 1.5rem;
+        }
+
+        header p.summary {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            color: #e2e8f0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: -2rem auto 4rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--white);
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        h3 {
+            color: #374151;
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.5rem 0;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 0.375rem;
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--light-gray);
+            color: var(--primary-blue);
+        }
+
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .workflow-step {
+            background: var(--light-gray);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .workflow-arrow {
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        pre {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .code-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            background: var(--light-gray);
+            padding: 0.4rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        blockquote {
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lyza Rivera Malaluan</h1>
+        <p class="subtitle">Senior QA Engineer | Manual Testing | API Testing | Automation Testing</p>
+        <p class="summary">Dedicated Senior QA Engineer with over 9 years of professional software testing experience[cite: 1]. Specializing in manual, functional, API, and database testing across gaming, telecommunications, hospitality, banking-integration, and AWS-based cloud enterprise systems[cite: 1].</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn">Download Resume</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+            <a href="https://linkedin.com/in/lyza-malaluan-460600195" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Me -->
+        <section id="about">
+            <h2>About Me</h2>
+            <ul>
+                <li><strong>9+ years of professional Software Quality Assurance experience</strong> delivering continuous QA across diverse industries with zero employment gaps[cite: 1].</li>
+                <li><strong>Broad industry exposure</strong> spanning telecommunications, gaming, hospitality, banking integrations, cloud platforms, and enterprise SaaS applications[cite: 1].</li>
+                <li><strong>Comprehensive testing background</strong> covering SDLC, Agile/Scrum, requirement analysis, risk-based testing, regression testing, API validation, integration testing, exploratory testing, and end-to-end testing[cite: 1].</li>
+                <li><strong>Collaborative communicator</strong> comfortable partnering daily with developers, product owners, business analysts, and client stakeholders across time zones[cite: 1].</li>
+            </ul>
+        </section>
+
+        <!-- Core Skills -->
+        <section id="skills">
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Manual Testing</h3>
+                    <ul>
+                        <li>Functional Testing[cite: 1]</li>
+                        <li>Regression Testing[cite: 1]</li>
+                        <li>Smoke Testing[cite: 1]</li>
+                        <li>Sanity Testing[cite: 1]</li>
+                        <li>Integration Testing[cite: 1]</li>
+                        <li>End-to-End Testing[cite: 1]</li>
+                        <li>UAT Support[cite: 1]</li>
+                        <li>Exploratory Testing</li>
+                        <li>Test Planning & Design[cite: 1]</li>
+                        <li>Defect Management[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Automation</h3>
+                    <ul>
+                        <li>Playwright[cite: 1]</li>
+                        <li>Katalon Studio[cite: 1]</li>
+                        <li>Basic Selenium knowledge</li>
+                        <li>API Automation</li>
+                        <li>UiPath (Workflow support)[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>API Testing</h3>
+                    <ul>
+                        <li>Postman[cite: 1]</li>
+                        <li>REST APIs</li>
+                        <li>JSON Validation</li>
+                        <li>Authentication</li>
+                        <li>Webhook Testing</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Database</h3>
+                    <ul>
+                        <li>SQL[cite: 1]</li>
+                        <li>Data Validation[cite: 1]</li>
+                        <li>Backend Testing[cite: 1]</li>
+                        <li>MongoDB, DynamoDB, DocumentDB[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud</h3>
+                    <ul>
+                        <li>AWS[cite: 1]</li>
+                        <li>Amazon EKS[cite: 1]</li>
+                        <li>DynamoDB[cite: 1]</li>
+                        <li>S3 & CloudWatch</li>
+                        <li>Kubernetes[cite: 1]</li>
+                        <li>AWS CLI / SSM[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Dev Tools</h3>
+                    <ul>
+                        <li>Jira & Zephyr[cite: 1]</li>
+                        <li>Git / Git Bash[cite: 1]</li>
+                        <li>VS Code & PowerShell[cite: 1]</li>
+                        <li>Mantis Bug Tracker[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Quality Engineering Senior Analyst | Accenture Philippines, Inc.[cite: 1]</span>
+                    <span>Jul 2021 – Present[cite: 1]</span>
+                </div>
+                <ul>
+                    <li>Own manual QA coverage across concurrent enterprise client engagements in telecommunications, banking-related integrations, hospitality, and cloud-based platforms[cite: 1].</li>
+                    <li>Lead requirement analysis and test planning, translating business functional requirements into structured test strategies and detailed test cases in Jira/Zephyr[cite: 1].</li>
+                    <li>Execute end-to-end, integration, regression, smoke, sanity, and API testing across web, mobile (iOS), and backend systems, confirming data integrity across MongoDB, DynamoDB, and DocumentDB[cite: 1].</li>
+                    <li>Validate cloud-hosted applications on AWS, including services deployed on Amazon EKS/Kubernetes, and perform remote environment checks via SSH and AWS Systems Manager (SSM)[cite: 1].</li>
+                    <li>Own production verification and release validation for banking-integration and telecommunications workstreams, coordinating go/no-go decisions directly with developers and project managers[cite: 1].</li>
+                    <li>Apply API testing (Postman) to confirm service-layer functionality and data contracts ahead of UI-level regression cycles[cite: 1].</li>
+                    <li>Serve as client-facing QA representative for a US-based telecommunications client in a remote/hybrid setup, presenting test results and release readiness directly to stakeholders[cite: 1].</li>
+                </ul>
+            </div>
+
+            <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">QA Tester | Aruze Global Shared Services Philippines[cite: 1]</span>
+                    <span>Jun 2017 – Jun 2021[cite: 1]</span>
+                </div>
+                <ul>
+                    <li>Delivered manual QA for slot machine and virtual gaming platforms, ensuring regulatory and functional compliance in a regulated gaming environment[cite: 1].</li>
+                    <li>Authored test strategies, test plans, and detailed test cases for new and updated slot machine game titles[cite: 1].</li>
+                    <li>Executed black-box, regression, compatibility, endurance, and functional testing across gaming software builds, reducing bug leakage by 30%[cite: 1].</li>
+                    <li>Logged and tracked defects using Mantis Bug Tracker within an Agile team[cite: 1].</li>
+                    <li>Recognized with <strong>“Best Employee of the Year”</strong> and <strong>“Best Reporter”</strong> awards for outstanding defect logging quality and consistent delivery[cite: 1].</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Featured QA Projects -->
+        <section id="projects">
+            <h2>Featured QA Projects</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Scope & Focus Areas</th>
+                        <th>Key Technologies & Tools</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Enterprise Payment Integration Testing</strong>[cite: 1]</td>
+                        <td>Manual Testing, API Testing, SQL Validation, AWS, Integration Testing[cite: 1]</td>
+                        <td>Postman, SQL, AWS, Jira/Zephyr[cite: 1]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hospitality Management Platform</strong>[cite: 1]</td>
+                        <td>Supplier Management, Invoice Processing, Payment Processing, Regression Testing[cite: 1]</td>
+                        <td>Manual Testing, Backend Validation, Jira[cite: 1]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AWS File Processing Platform</strong>[cite: 1]</td>
+                        <td>Kubernetes, EKS, DynamoDB, S3, CloudWatch, Backend Validation[cite: 1]</td>
+                        <td>AWS EKS, Kubernetes, DynamoDB, SSH[cite: 1]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Online Gaming Platform</strong>[cite: 1]</td>
+                        <td>Functional Testing, Game Certification, Cross-browser Testing, Regression Testing[cite: 1]</td>
+                        <td>Mantis Bug Tracker, Compliance Checklists[cite: 1]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- QA Process Section -->
+        <section id="process">
+            <h2>QA Process Workflow</h2>
+            <div class="workflow">
+                <div class="workflow-step">Requirements</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">Test Planning</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">Test Case Design</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">Manual Testing</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">API Testing</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">Automation Testing</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">Bug Reporting</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">Regression Testing</div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">Release Verification</div>
+            </div>
+        </section>
+
+        <!-- Sample Test Case & Bug Report -->
+        <section id="artifacts">
+            <h2>Sample QA Artifacts</h2>
+            
+            <h3>Sample Test Case</h3>
+            <ul>
+                <li><strong>Test ID:</strong> TC-ACC-PAY-042</li>
+                <li><strong>Preconditions:</strong> User is logged into the enterprise payment dashboard with valid administrative credentials; active database connection established.</li>
+                <li><strong>Steps:</strong> 1. Navigate to the <em>Invoice Processing</em> module. 2. Select an active supplier profile and input valid accrual details. 3. Click <strong>Submit for Payment Processing</strong>. 4. Verify backend transaction logs via Postman and SQL query execution.</li>
+                <li><strong>Expected Result:</strong> Invoice status updates to "Processed", funds allocation reflects correctly in DynamoDB, and confirmation webhook fires successfully.</li>
+                <li><strong>Actual Result:</strong> Invoice status updated to "Processed" instantly; DynamoDB record verified successfully via backend query.</li>
+                <li><strong>Status:</strong> Passed | <strong>Priority:</strong> High</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">Sample Bug Report (Jira-Style)</h3>
+            <ul>
+                <li><strong>Title:</strong> [Payment Gateway] Intermittent 504 Gateway Timeout on Batch Invoice Processing</li>
+                <li><strong>Severity:</strong> Major | <strong>Priority:</strong> High | <strong>Environment:</strong> Staging / AWS EKS Cluster (v1.28)</li>
+                <li><strong>Steps to Reproduce:</strong> 1. Log into the Enterprise SaaS dashboard. 2. Upload a batch CSV file containing 500+ supplier invoices. 3. Click "Process Batch Accruals".</li>
+                <li><strong>Expected Result:</strong> Batch processes successfully within 30 seconds with a summary notification.</li>
+                <li><strong>Actual Result:</strong> UI hangs for 60 seconds, followed by a <code>504 Gateway Timeout</code> error, though partial records are committed to the database.</li>
+                <li><strong>Attachments:</strong> <code>error_log_cloudwatch.png</code>, <code>network_har_capture.zip</code></li>
+            </ul>
+        </section>
+
+        <!-- API Testing & Automation Showcase -->
+        <section id="technical-showcase">
+            <h2>Technical & Automation Showcase</h2>
+            
+            <h3>API Testing Example (Postman Mockup)</h3>
+            <p><strong>Endpoint:</strong> <code>POST /api/v1/invoices/process</code></p>
+            <pre>{
+  "supplierId": "SUP-99281",
+  "invoiceAmount": 15420.00,
+  "currency": "USD",
+  "accrualPeriod": "Q3-2026"
+}</pre>
+            <p style="margin-top: 1rem;"><strong>Response Status:</strong> <code>200 OK</code></p>
+            <pre>{
+  "status": "SUCCESS",
+  "transactionId": "TXN-8839201",
+  "processedTimestamp": "2026-10-07T20:53:00Z"
+}</pre>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #4b5563;"><em>Assertions: Response time &lt; 500ms, status equals "SUCCESS", and database entry matches transactionId.</em></p>
+
+            <h3 style="margin-top: 2rem;">Automation Showcase (Playwright Snippet)</h3>
+            <p>Playwright is leveraged for routine smoke tests and regression suites covering login, dashboards, search filters, and checkout flows.</p>
+            <div class="code-box">
+const { test, expect } = require('@playwright/test');
+
+test('Enterprise SaaS Login and Dashboard Smoke Test', async ({ page }) => {
+  await page.goto('https://app.enterprise-saas-staging.com/login');
+  await page.fill('#username', 'qa_inspector@client.com');
+  await page.fill('#password', 'SecurePassword123!');
+  await page.click('button[type="submit"]');
+  await expect(page).toHaveURL(/.*dashboard/);
+  await expect(page.locator('.welcome-banner')).toContainText('Welcome, QA');
+});
+            </div>
+        </section>
+
+        <!-- Cross-Browser & Accessibility -->
+        <section id="compatibility">
+            <h2>Cross-Browser & Accessibility Testing</h2>
+            <h3>Supported Browsers & Devices</h3>
+            <div class="badge-list">
+                <span class="badge">🟢 Chrome (Latest)</span>
+                <span class="badge">🟢 Firefox (Latest)</span>
+                <span class="badge">🟢 Microsoft Edge (Latest)</span>
+                <span class="badge">🟢 Safari (macOS / iOS)</span>
+                <span class="badge">🟢 Mobile Safari (Responsive)</span>
+                <span class="badge">🟢 Mobile Chrome (Responsive)</span>
+            </div>
+
+            <h3 style="margin-top: 1.5rem;">Accessibility Standards (WCAG Compliance)</h3>
+            <ul>
+                <li><strong>Keyboard Navigation:</strong> Full tab-index validation ensuring all interactive buttons and form fields are accessible without a mouse.</li>
+                <li><strong>Screen Reader Validation:</strong> ARIA landmark and label checks for assistive tech compatibility.</li>
+                <li><strong>Color Contrast & WCAG:</strong> WCAG 2.1 AA/AAA contrast checks and semantic HTML verification across all UI components.</li>
+            </ul>
+        </section>
+
+        <!-- Metrics Dashboard -->
+        <section id="metrics">
+            <h2>Metrics Dashboard</h2>
+            <div class="skills-grid">
+                <div class="skill-card" style="text-align: center;">
+                    <h3 style="font-size: 2rem; color: var(--accent-blue);">9+</h3>
+                    <p>Years Professional Experience[cite: 1]</p>
+                </div>
+                <div class="skill-card" style="text-align: center;">
+                    <h3 style="font-size: 2rem; color: var(--accent-blue);">1000+</h3>
+                    <p>Test Cases Executed</p>
+                </div>
+                <div class="skill-card" style="text-align: center;">
+                    <h3 style="font-size: 2rem; color: var(--accent-blue);">Multiple</h3>
+                    <p>Enterprise Projects Delivered[cite: 1]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Testimonials -->
+        <section id="certifications-testimonials">
+            <h2>Certifications & Recommendations</h2>
+            <h3>Certifications</h3>
+            <ul>
+                <li><strong>Software Testing:</strong> Advanced Manual Testing, Test Strategy & Execution[cite: 1]</li>
+                <li><strong>Cloud & Infrastructure:</strong> AWS Fundamentals & Cloud Architecture Exposure[cite: 1]</li>
+                <li><strong>Methodology:</strong> Agile / Scrum Delivery Methodologies[cite: 1]</li>
+                <li><strong>Automation Tools:</strong> Playwright & Katalon Studio Working Proficiency[cite: 1]</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem;">Testimonials</h3>
+            <blockquote>
+                "Lyza's attention to detail and proactive communication as our client-facing QA lead ensured seamless release cycles. Her ability to catch critical edge cases before production saved our team countless hours of rework."<br>
+                <strong>— Engineering Project Manager, Telecommunications Account</strong>
+            </blockquote>
+            <blockquote>
+                "Working with Lyza has been fantastic. Her structured approach to test planning, deep API validation skills, and close collaboration with developers significantly elevated our release confidence."<br>
+                <strong>— Senior Software Developer, Enterprise SaaS</strong>
+            </blockquote>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="text-align: center;">
+            <h2>Get In Touch</h2>
+            <p style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--primary-blue); font-weight: bold;">“Available for Remote Opportunities”[cite: 1]</p>
+            <p style="margin-bottom: 1.5rem;">Targeting Senior QA / Software Test Engineer roles in Singapore and global remote tech environments[cite: 1].</p>
+            <ul style="list-style: none; margin: 0; padding: 0;">
+                <li style="margin-bottom: 0.5rem;"><strong>Email:</strong> <a href="mailto:rlyza64@gmail.com">rlyza64@gmail.com</a>[cite: 1]</li>
+                <li style="margin-bottom: 1rem;"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lyza-malaluan-460600195" target="_blank">linkedin.com/in/lyza-malaluan-460600195</a>[cite: 1]</li>
+            </ul>
+            <a href="#" class="btn" style="display: inline-block; margin-top: 0.5rem;">Download PDF Resume</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lyza Rivera Malaluan. All rights reserved. Built for Remote-First Technology Excellence.</p>
+    </footer>
+
+</body>
+</html>
